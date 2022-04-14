@@ -1,0 +1,37 @@
+{
+  "name": "markdown-it-svgbob",
+  "version": "0.0.1",
+  "description": "Support svgbob text-based diagrams in Markdown-It.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agoose77/markdown-it-svgbob.git"
+  },
+  "keywords": [
+    "markdown-it",
+    "markdown",
+    "diagram",
+    "svgbob"
+  ],
+  "author": "Angus Hollands",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/agoose77/markdown-it-svgbob/issues"
+  },
+  "homepage": "https://github.com/agoose77/markdown-it-svgbob#readme",
+  "devDependencies": {
+    "@types/markdown-it": "0.0.9",
+    "typescript": "~3.7.3"
+  },
+  "dependencies": {
+    "markdown-it": "^10.0.0",
+    "svgbob-wasm": "^1.0.0"
+  }
+}
