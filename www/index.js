@@ -1,6 +1,5 @@
-//import { convert_string } from "markdown-it-diagrams";
 import MarkdownIt from "markdown-it";
-import {loadPluginFactory} from "markdown-it-diagrams"
+import {loadPluginFactory} from "markdown-it-svgbob"
 
 loadPluginFactory().then((plugin) => {
     var md = new MarkdownIt().use(plugin);

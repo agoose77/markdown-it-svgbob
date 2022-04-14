@@ -1,7 +1,7 @@
 {
-    "name": "test-markdown-it-diagrams",
+    "name": "test-markdown-it-svgbob",
     "version": "0.0.0",
-    "description": "create an app to test markdown-it-diagams",
+    "description": "create an app to test markdown-it-svgbob",
     "main": "index.js",
     "scripts": {
         "start": "webpack-dev-server"
@@ -9,7 +9,7 @@
     "author": "Angus Hollands <goosey15@gmail.com>",
     "license": "(MIT OR Apache-2.0)",
     "dependencies": {
-        "markdown-it-diagrams": "file:../",
+        "markdown-it-svgbob": "file:../",
         "markdown-it": "^10.0.0",
         "copy-webpack-plugin": "^5.0.0",
         "webpack": "^4.16.3",

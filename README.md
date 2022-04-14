@@ -1,5 +1,5 @@
-# markdown-it-diagrams
-Diagrams renderer for [markdown-it](https://github.com/markdown-it/markdown-it), using [svgbob](https://github.com/ivanceras/svgbob), and [mermaidjs](https://github.com/knsv/mermaid).
+# markdown-it-svgbob
+[svgbob](https://github.com/ivanceras/svgbob) renderer for [markdown-it](https://github.com/markdown-it/markdown-it).
 
 Example code
 
@@ -14,24 +14,23 @@ An example svgbob diagram:
     \ /
      '
 ```
-~~~
-And a mermaid diagram:
-~~~
-``` mermaid 
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
+or using the sphinx-svgbob language name:
+``` svgbob 
+     .---.
+    /-o-/--
+ .-/ / /->
+( *  \/
+ '-.  \
+    \ /
+     '
 ```
-~~~
 
 ## API
 The `svgbob-wasm` dependency which provides svgbob support is a wasm module. 
 In order to load the dependency asynchronously, this plugin exposes an async function `loadPluginFactory`
 which should be awaited to provide the plugin factory:
 ```typescript
-import {loadPluginFactory} from "markdown-it-diagrams";
+import {loadPluginFactory} from "markdown-it-svgbob";
 import * as MarkdownIt from "markdown-it";
 
 loadPluginFactory().then((plugin) => {
