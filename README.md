@@ -30,10 +30,10 @@ The `svgbob-wasm` dependency which provides svgbob support is a wasm module.
 In order to load the dependency asynchronously, this plugin exposes an async function `loadPluginFactory`
 which should be awaited to provide the plugin factory:
 ```typescript
-import {loadPluginFactory} from "markdown-it-svgbob";
+import factory from "@agoose77markdown-it-svgbob";
 import * as MarkdownIt from "markdown-it";
 
-loadPluginFactory().then((plugin) => {
+factory().then((plugin) => {
     let md = new MarkdownIt({
       html: true,
     }).use(plugin);
