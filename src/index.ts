@@ -2,7 +2,7 @@ import MarkdownIt from "markdown-it";
 
 
 // Define interface to await readiness of import
-export async function loadPluginFactory() {
+export default async function factory() {
     const svgbob = await import("svgbob-wasm");
 
     return (md: MarkdownIt, options: any) => {
@@ -22,31 +22,22 @@ export async function loadPluginFactory() {
             let imageHTML: string = "";
             let imageAttrs: string[][] = [];
 
-            // Only handle custom token
             switch (langName) {
                 case "bob": // spongedown
                 case "svgbob": // sphinx-svgbob
-                {
-                    try {
-                        imageHTML = svgbob.render(token.content);
-                    } catch (e) {
-                        console.log(`Error in running svgbob.convert_string: ${e}`);
+                    break
+                default:
+                    if (defaultFenceRenderer !== undefined) {
+                        return defaultFenceRenderer(tokens, idx, options, env, slf);
                     }
-                    break;
-                }
-                default: {
-                    return defaultFenceRenderer(tokens, idx, options, env, slf);
-                }
-
+                    // Missing fence renderer!
+                    return "";
             }
+            imageHTML = svgbob.render(token.content);
 
-            // If we have an image, let's render it, otherwise return blank img tag
-            if (imageHTML.length) {
-                // Store encoded image data
-                imageAttrs.push(["src", `data:image/svg+xml,${encodeURIComponent(imageHTML)}`]);
-                return `<img ${slf.renderAttrs({attrs: imageAttrs})}>`;
-            }
-            return "<img>"
+            // Store encoded image data
+            imageAttrs.push(["src", `data:image/svg+xml,${encodeURIComponent(imageHTML)}`]);
+            return `<img ${slf.renderAttrs({attrs: imageAttrs})}>`;
 
         }
 
