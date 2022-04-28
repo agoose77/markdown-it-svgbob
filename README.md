@@ -4,8 +4,8 @@
 Example code
 
 An example svgbob diagram:
-~~~
-``` bob 
+
+```bob 
      .---.
     /-o-/--
  .-/ / /->
@@ -15,7 +15,8 @@ An example svgbob diagram:
      '
 ```
 or using the sphinx-svgbob language name:
-``` svgbob 
+
+```svgbob 
      .---.
     /-o-/--
  .-/ / /->
