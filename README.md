@@ -1,4 +1,9 @@
 # markdown-it-svgbob
+[![npm-badge][]][npm]
+
+[npm-badge]: https://img.shields.io/npm/v/@agoose77/markdown-it-svgbob?style=for-the-badge
+[npm]: https://www.npmjs.com/package/@agoose77/markdown-it-svgbob
+
 [svgbob](https://github.com/ivanceras/svgbob) renderer for [markdown-it](https://github.com/markdown-it/markdown-it).
 
 Example code
